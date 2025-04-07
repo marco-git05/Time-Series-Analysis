@@ -6,7 +6,7 @@ import math
 t = np.linspace(0, 10, 100)
 
 # Generate a smooth function
-f_t = t**2
+f_t = np.cos(t)
 
 # Add noise
 noise = 10.0 * np.random.randn(len(t))
