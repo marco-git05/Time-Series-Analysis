@@ -36,6 +36,18 @@ def polynomial_basis(n, t):
     # Return an array of basis functions
     return basis
 
+# Cosine basis
+def cosine_basis(n, t):
+    basis = []
+
+    for i in range(0, n):
+        function = np.cos(t*i)
+        basis.append(function)
+
+    # Return an array of basis functions
+    return basis
+
+
 # Aproximates the function of the noisy time series using the summ of coefficients and basis functions
 def approximate_function(coeff, basis):
     approx = 0;

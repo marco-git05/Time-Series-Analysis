@@ -12,6 +12,7 @@ def main():
     # Create basis fuctions
     basis_functions = ts.polynomial_basis(4, t)
 
+
     # Linear system
     n = len(basis_functions)
     A = np.zeros((n,n))
@@ -32,8 +33,8 @@ def main():
 
     # Plot
     plt.figure(figsize=(8,6))
-    plt.plot(t, noisy_function, "b")
-    plt.plot(t, new_function, "r")
+    plt.plot(t, noisy_function, "b", label="Noisy Function")
+    plt.plot(t, new_function, "r", label="Polynomial Approximation")
     plt.legend()
     plt.title("Time Series With Noise")
     plt.grid(True)
