@@ -28,8 +28,23 @@ def integral(x, f_x):
 
 # Cosine basis
 def cosine_basis(n, t):
-    return np.cos(n * t)
+    basis = []
+
+    for i in range(1, n):
+        basis.append(np.cos(t))
+
+    return basis
 
 # Polynomial-exponential basis
 def poly_exp_basis(n, t):
     return (t**n) * np.exp(n *t)
+
+def inner_product(f_x, g_x, t):
+    return integral(t, f_x * g_x)
+
+def approximate_function(t, coeff, basis):
+    sum = 0;
+    for i in range(1, t):
+        sum += (coeff * basis)
+
+    return sum
