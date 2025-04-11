@@ -1,6 +1,5 @@
 import numpy as np
 
-
 # Creates a time series with noise and takes a vector as parameter
 def create_noisy_time_series(t):
     # Generate a smooth function
@@ -40,9 +39,9 @@ def inner_product(f_x, g_x, t):
     return integral(t, f_x * g_x)
 
 #TODO
-def approximate_function(t, coeff, basis):
+def approximate_function(coeff, basis):
     sum = 0;
-    for i in range(1, len(t)):
-        sum += (coeff * basis[i])
+    for i in range(0, len(basis)):
+        sum += (coeff[i] * basis[i])
 
     return sum
