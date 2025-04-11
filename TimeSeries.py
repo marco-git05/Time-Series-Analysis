@@ -1,6 +1,6 @@
 import numpy as np
 
-# Creates a time series with noise and takes a vector as parameter
+# Create a time series with noise and takes a vector as parameter
 def create_noisy_time_series(t):
     # Generate a smooth function
     f_t = t**2
@@ -11,7 +11,7 @@ def create_noisy_time_series(t):
 
     return noisy_time_series
 
-# Function that computes an integral given a vector (x values) and a function (f of x values)
+# Compute an integral given a vector (x values) and a function (f of x values)
 def integral(x, f_x):
     # Initialize sum
     s = 0
@@ -33,15 +33,14 @@ def polynomial_basis(n, t):
         function = t**i
         basis.append(function)
 
+    # Return an array of basis functions
     return basis
 
-def inner_product(f_x, g_x, t):
-    return integral(t, f_x * g_x)
-
-#TODO
+# Aproximates the function of the noisy time series using the summ of coefficients and basis functions
 def approximate_function(coeff, basis):
-    sum = 0;
+    approx = 0;
     for i in range(0, len(basis)):
-        sum += (coeff[i] * basis[i])
+        approx += (coeff[i] * basis[i])
 
-    return sum
+    # Return the approximated function
+    return approx
