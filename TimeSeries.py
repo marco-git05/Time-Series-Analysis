@@ -2,12 +2,8 @@ import numpy as np
 from matplotlib import pyplot as plt
 import math
 
-# Create time vector (300 elements from 0 to 3)
-def CreateVector():
-    t = np.linspace(0, 3, 300)
-    return t
 
-def CreateNoisyTimeSeries(t):
+def create_noisy_time_series(t):
     # Generate a smooth function
     f_t = t**2
 
@@ -25,3 +21,6 @@ def plot(t, function):
     plt.title("Time Series With Noise")
     plt.grid(True)
     plt.show()
+
+def create_basis_function(n, t):
+    np.cos(n * t)
