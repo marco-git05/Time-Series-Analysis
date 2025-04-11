@@ -1,14 +1,20 @@
 import numpy as np
+from matplotlib import pyplot as plt
 import TimeSeries as ts
 
 def main():
-    # Create time vector (100 elements from 0 to 1)
-    vector = np.linspace(0, 3, 200)
-    f_x = np.cos(vector)
-    print(ts.integral(vector, f_x))
+    # Create vector (100 elements from 0 to 1)
+    t = np.linspace(0, 3, 200)
+    
+    # Create a noisy function
+    noisy_function = ts.create_noisy_time_series(t)
 
-    noisy_function = ts.create_noisy_time_series(vector)
-    ts.plot(vector, noisy_function)
-    print(ts.integral(vector, np.cos(vector)))
+    # Plot
+    plt.figure(figsize=(12,10))
+    plt.plot(t, noisy_function, "b")
+    plt.legend()
+    plt.title("Time Series With Noise")
+    plt.grid(True)
+    plt.show()
 
 main()
