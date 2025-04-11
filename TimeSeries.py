@@ -27,18 +27,18 @@ def cosine_basis(n, t):
 
 # Polynomial-exponential basis
 def poly_exp_basis(n, t):
-    return (t**n) * np.exp(n * t)
+    return (t**n) * np.exp(n *t)
 
-def integral(f_x, x):
+def integral(x, f_x):
     # Vector that starts at 0 and ends at 1 with increments of 0.01
-    x = np.arange(0, 1.01, 0.01)
+    #x = np.arange(0, 1.01, 0.01)
 
     # Initialize sum
     s = 0
 
     # Add every trapezoid
     for i in range(1, len(x)):
-        height = (x[i]**2 + x[i-1]**2) / 2
+        height = (f_x[i] + f_x[i-1]) / 2
         base = x[i] - x[i-1]
         s += height * base
 
