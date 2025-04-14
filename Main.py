@@ -10,7 +10,7 @@ def main():
     noisy_function = ts.create_noisy_time_series(t)
 
     # Create basis fuctions
-    basis_functions = ts.polynomial_basis(4, t)
+    basis_functions = ts.cosine_basis(4, t)
 
 
     # Linear system
