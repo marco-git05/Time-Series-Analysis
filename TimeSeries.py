@@ -48,7 +48,7 @@ def cosine_basis(n, t):
     return basis
 
 
-# Aproximates the function of the noisy time series using the summ of coefficients and basis functions
+# Formulates a linear system and aproximates the function of the noisy time series using the sum of coefficients and basis functions
 def approximate_function(coeff, basis):
     approx = 0;
     for i in range(0, len(basis)):
